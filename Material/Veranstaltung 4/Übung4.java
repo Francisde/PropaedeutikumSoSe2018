@@ -26,6 +26,11 @@ public class Übung4 {
 
         int[] myArray = {2, 45, 10, 7, 80};
         printArray(myArray);
+        
+        double test =div(5,0);
+        System.out.println(test);
+        
+        System.out.println(gaussSumme(100));
 
     }
     // Definition der eigenen Methoden immer außerhalb der Main Methode! Aber immer
@@ -48,6 +53,16 @@ public class Übung4 {
         double result = a * a;
         return result;
     }
+    
+    public static double div(double a, double b){
+        double result;
+        if(b!=0){
+            result=a/b;
+        }else{
+            result=-0.0;
+        }
+        return result;
+    }
 
     // Methode zur Ausgabe eines Array auf dem Bildschirm
     public static void printArray(int[] array) {
@@ -58,6 +73,16 @@ public class Übung4 {
         }
         // Abschließendes System.out.println um den Cursor in die nächste Zeile zu setzten
         System.out.println("");
+    }
+    // Methode, die die Gaussche Summe rekursiv berechnet und zurückgibt.
+    public static int gaussSumme(int n){
+        int result;
+        if(n==0){
+            return 0; 
+        }else{
+            result=n+gaussSumme(n-1);
+        }
+        return result;
     }
 
 }
